@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>QuantumCore • Cyber Injector</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ===== TOAST ===== -->
+    <div class="toast" id="toast"></div>
+
+    <!-- ===== APP ===== -->
+    <div class="app" id="app">
+
+        <!-- LOADING -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+            <div class="loading-text">Quantum<span>Core</span></div>
+        </div>
+
+        <!-- HEADER -->
+        <div class="header">
+            <div class="brand">
+                <div class="brand-icon">QC</div>
+                <h1>QuantumCore</h1>
+            </div>
+            <div class="version-badge">v2.6</div>
+        </div>
+
+        <!-- BODY -->
+        <div class="body">
+
+            <!-- DEVELOPER -->
+            <div class="dev-card">
+                <span class="label">Developer</span>
+                <span class="name">YANZ</span>
+            </div>
+
+            <!-- GAME SELECTOR -->
+            <div class="game-selector" id="gameSelector">
+                <button id="btnFFMAX" class="active-ffmax">FF MAX</button>
+                <button id="btnFF">FREE FIRE</button>
+            </div>
+
+            <!-- FEATURES -->
+            <div class="features-section" id="featuresSection">
+                <div class="section-title">
+                    <span>⚡ FEATURE TOGGLES</span>
+                    <span class="count" id="featureCount">6/6 active</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="fps">
+                    <div class="info">
+                        <span class="dot on" id="dotFps"></span>
+                        <div>
+                            <div class="name">Boost FPS</div>
+                            <div class="desc">Frame rate optimization</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusFps">ON</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="drag">
+                    <div class="info">
+                        <span class="dot on" id="dotDrag"></span>
+                        <div>
+                            <div class="name">Easy Drag 14%</div>
+                            <div class="desc">Aiming reduction</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusDrag">ON</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="smooth">
+                    <div class="info">
+                        <span class="dot on" id="dotSmooth"></span>
+                        <div>
+                            <div class="name">Smooth Graphics</div>
+                            <div class="desc">Visual rendering</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusSmooth">ON</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="responsive">
+                    <div class="info">
+                        <span class="dot on" id="dotResponsive"></span>
+                        <div>
+                            <div class="name">Responsif Layar</div>
+                            <div class="desc">Touch response</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusResponsive">ON</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="bypass">
+                    <div class="info">
+                        <span class="dot on" id="dotBypass"></span>
+                        <div>
+                            <div class="name">Bypass Security</div>
+                            <div class="desc">Security layer bypass</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusBypass">ON</span>
+                </div>
+
+                <div class="feature-toggle" data-feature="fullscreen">
+                    <div class="info">
+                        <span class="dot on" id="dotFullscreen"></span>
+                        <div>
+                            <div class="name">Full Layar</div>
+                            <div class="desc">Fullscreen mode</div>
+                        </div>
+                    </div>
+                    <span class="status-badge on" id="statusFullscreen">ON</span>
+                </div>
+            </div>
+
+            <!-- AUTO OPEN -->
+            <div class="auto-section">
+                <div class="title">▶ AUTO OPEN AFTER INJECT</div>
+                <div class="auto-options">
+                    <button id="autoFFMAX" class="active-auto">FF MAX</button>
+                    <button id="autoFF">FREE FIRE</button>
+                    <button id="autoNone">TIDAK</button>
+                </div>
+            </div>
+
+            <!-- PAIRING -->
+            <div class="pairing-section">
+                <div class="row">
+                    <label>🔐 PAIR</label>
+                    <input type="text" id="pairingInput" placeholder="Kode pairing (opsional)" maxlength="24">
+                </div>
+                <div class="hint">Masukkan kode dari Opsi Pengembang jika diperlukan</div>
+            </div>
+
+            <!-- INJECT BUTTON -->
+            <button class="btn-inject" id="injectBtn">
+                <span class="btn-text">
+                    <span class="arrow">▶</span> INJECT NOW
+                </span>
+            </button>
+
+            <!-- TERMINAL -->
+            <div class="terminal" id="terminal">
+                <div class="log-line">
+                    <span class="log-time">[INIT]</span>
+                    <span class="log-msg cyan">QuantumCore v2.6 loaded</span>
+                </div>
+                <div class="log-line">
+                    <span class="log-time">[INIT]</span>
+                    <span class="log-msg">Waiting for injection...</span>
+                </div>
+            </div>
+
+            <!-- STATUS BAR -->
+            <div class="status-bar">
+                <span class="status-text">STATUS: <span class="highlight" id="statusText">READY</span></span>
+                <div class="badges">
+                    <span class="badge">NOTIFY</span>
+                    <span class="badge live">● LIVE</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
